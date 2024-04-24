@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import logo from "../../assets/upgraderboy_dark.svg";
 import "./header.css";
 const ShareButton = () => {
   const [isMac, setIsMac] = useState(false);
@@ -9,7 +10,7 @@ const ShareButton = () => {
     const button = document.querySelector('button');
     const icon = button.querySelector('.icon');
     const canonical = document.querySelector('link[rel="canonical"]');
-    
+    const logoUrl = logo;
     setIsMac(/Mac|iPhone/.test(navigator.platform));
     setIsWindows(/Win/.test(navigator.platform));
     setCanonicalHref(canonical?.href);
@@ -17,15 +18,25 @@ const ShareButton = () => {
     icon.classList.add(`share${isMac ? 'mac' : (isWindows ? 'windows' : '')}`);
   }, [isMac, isWindows]);
 
+  function getMetaDescription() {
+    var metaTags = document.getElementsByTagName('meta');
+    for (var i = 0; i < 190; i++) {
+        if (metaTags[i].getAttribute('name') === 'description') {
+            return metaTags[i].getAttribute('content');
+        }
+    }
+    return '';
+}
   const handleClick = async () => {
     const title = document.title;
-    const text = document.desc;
+    const text = getMetaDescription();
     const url = canonicalHref || window.location.href;
 
     if ('share' in navigator) {
       try {
         await navigator.share({
           url,
+          icon: logoUrl,
           text,
           title,
         });
@@ -35,9 +46,9 @@ const ShareButton = () => {
           console.error(err.name, err.message);
         }
       }
-    }
+    }const shareURL = new URL('https://twitter.com/intent/tweet');
 
-    const shareURL = new URL('https://twitter.com/intent/tweet');
+    
     const params = new URLSearchParams();
     params.append('text', text);
     params.append('url', url);
