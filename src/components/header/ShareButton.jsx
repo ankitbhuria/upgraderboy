@@ -47,8 +47,8 @@ const ShareButton = () => {
 
   return (
     <button onClick={handleClick} className='sign'>
-      Share
-      <span className="icon"></span>
+      <span>Share {" "}</span>
+      <i className="icon uil-share"></i>
     </button>
   );
 };

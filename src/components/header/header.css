@@ -134,6 +134,7 @@
 
 .sign {
   display: inline-block;
+  display: flex;
   background-color: var(--btn-color);
   color: var(--container-color);
   padding: 0.4rem 2rem;
