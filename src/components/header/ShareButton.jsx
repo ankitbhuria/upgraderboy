@@ -19,9 +19,9 @@ const ShareButton = () => {
 
   function getMetaDescription() {
     var metaTags = document.getElementsByTagName('meta');
-    for (var i = 0; i < 190; i++) {
+    for (var i = 0; i < metaTags.length; i++) {
         if (metaTags[i].getAttribute('name') === 'description') {
-            return metaTags[i].getAttribute('content');
+            return metaTags[i].getAttribute('content').slice(0, 190);
         }
     }
     return '';
@@ -48,7 +48,7 @@ const ShareButton = () => {
       }
     }
 
-    const shareURL = new URL('https://twitter.com/intent/tweet');
+    const shareURL = new URL('https://www.addtoany.com/share?url=${encodeURIComponent(url)}&title=${encodeURIComponent(title)}&description=${encodeURIComponent(text)}&image=${encodeURIComponent(logoUrl)}');
     const params = new URLSearchParams();
     params.append('text', text);
     params.append('url', url);
