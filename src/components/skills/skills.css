@@ -1,0 +1,90 @@
+.skills__container {
+  grid-template-columns: repeat(2, 350px);
+  column-gap: 3rem;
+  justify-content: center;
+}
+.skills__content {
+  background-color: var(--card-color);
+  border: 1px solid var(--border-color);
+  padding: 2rem 4rem;
+  border-radius: 1.25rem;
+  -webkit-border-radius: 1.25rem;
+  -moz-border-radius: 1.25rem;
+  -ms-border-radius: 1.25rem;
+  -o-border-radius: 1.25rem;
+}
+.skills__title {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  text-align: center;
+  margin-bottom: var(--mb-1-5);
+}
+.skills__box {
+  display: flex;
+  justify-content: space-between;
+  columns: 2.5rem;
+}
+.skills__group {
+  display: grid;
+  align-items: flex-start;
+  row-gap: 1.4rem;
+}
+.skills__data {
+  display: flex;
+  column-gap: 0.5rem;
+}
+.skills .bx-badge-check {
+  font-size: 1rem;
+  color: var(--title-color);
+}
+.skills__name {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  line-height: 10px;
+}
+
+.skills__level {
+  font-size: var(--tiny-font-size);
+}
+/* BREAKPOINTS */
+/* FOR LARGE DEVICES */
+@media screen and (max-width: 992px) {
+  .skills__container{
+    grid-template-columns: max-content;
+    row-gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .skills__container{
+    grid-template-columns: 1fr;
+  }
+  .skills__box {
+  display: flex;
+  justify-content: space-evenly;
+  columns: 2.5rem;
+}
+  .skills__content{
+    padding: 1.5rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  :root {
+    --big-font-size: 2.25rem;
+  }
+
+  .container{
+    margin-left: var(--mb-1);
+    margin-right: var(--mb-1);
+  }
+}
+/* For Small devices */
+@media screen and (max-width: 350px) {
+
+    .skills__box{
+        column-gap: 1.25rem;
+    }
+    .skills__name{
+        font-size: var(--small-font-size);
+    }
+}
