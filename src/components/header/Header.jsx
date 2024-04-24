@@ -7,7 +7,7 @@ import Mode from "../mode/Mode.jsx";
 import ShareButton from "./ShareButton.jsx";
 // import "../../../public/share.js";
 function Header() {
-  const [dark, setMode] = useState(true);
+  const [dark, setMode] = useState(localStorage.getItem("mode") === "light" ? true : false);
   const [Toggle, showMenu] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [activeNav, setActiveNav] = useState("#home");
