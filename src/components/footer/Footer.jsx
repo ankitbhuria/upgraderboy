@@ -8,7 +8,10 @@ function Footer() {
       <footer className="footer">
         <div className="footer__container container">
           <h1 className="footer__title">
-            <img src={UB} style={{ height: "200px" }} alt="" />
+            {/* <img src={UB} style={{ height: "200px" }} alt="" /> */}
+            <div className="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="VERTICAL" data-vanity="upgraderboy" data-version="v1"></div>
+              
+              
           </h1>
           <ul className="footer__list">
             <li>

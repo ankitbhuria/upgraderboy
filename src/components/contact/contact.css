@@ -116,12 +116,18 @@
 .contact__form-area textarea{
     resize: none;
 }
+
+
+
 /* BREAKPOINTS */
 /* FOR LARGE DEVICES */
 @media screen and (max-width: 992px) {
-  .contact__container {
-    column-gap: 3rem;
-  }
+    .contact__container {
+        column-gap: 3rem;
+    }
+    .contact__form-area {
+      height: 14.7rem;
+    }
 }
 
 @media screen and (max-width: 768px) {
